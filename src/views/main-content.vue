@@ -1,4 +1,3 @@
-<!-- src/views/main-content.vue -->
 <template>
     <div class="container">
         <div class="header">
@@ -26,19 +25,15 @@
             <button id="startOver">Start over</button>
         </div>
         <div>
-            <p>{{ webpack }}</p>
+            <p></p>
         </div>
     </div>
 </template>
 
-<script lang="ts">
-    import Vue from 'vue';
+<script>
+    import Vue from "vue";
 
-    export default {
-        name: "main-content",
-        data: () => ({
-            // reactive data property of the component.
-            webpack: 'Powered by webpack!',
-        })
-    }
+    export default Vue.extend({
+        props: ['name', 'main-content']
+    });
 </script>

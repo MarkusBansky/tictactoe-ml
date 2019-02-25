@@ -5,6 +5,7 @@ export default class State {
 
     constructor(grid: Grid) {
         grid.buttons.forEach(btn => {
+            // @ts-ignore
             this.value.push(btn.getState());
         });
     }

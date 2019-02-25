@@ -1,18 +1,19 @@
-import Player from "player";
-import Grid from "./grid";
+import Player from './player';
+import Grid from './grid';
 
 export default class Button {
     grid: Grid;
 
     btn: Element;
+    // @ts-ignore
     occupiedBy: Player;
 
-    constructor(grid: Grid, btn, mainPlayer: Player, opponent: Player) {
+    constructor(grid: Grid, btn: HTMLElement | Element, p: Player) {
         this.btn = btn;
         this.grid = grid;
 
         // Register a on click event
-        $(this.btn).click(() => this.occupyBy(mainPlayer));
+        $(this.btn).click(() => this.occupyBy(p));
     }
 
     occupyBy(player: Player) {
