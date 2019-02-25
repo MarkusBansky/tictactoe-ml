@@ -1,20 +1,6 @@
-import Button from './scripts/button';
-import Player from "./scripts/player";
-import Grid from "./scripts/grid";
+import Vue from 'vue';
+import MainContent from 'views/main-content';
+import 'scripts/main';
 
-let grid = new Grid();
-
-let humanPlayer = new Player('HUMAN', 'X');
-let aiPlayer = new Player('AI', 'O');
-
-// Do something for each button
-$('.game button').each(function () {
-    // Create a new button object
-    let btn = new Button(grid, this, humanPlayer, aiPlayer);
-    // Add it to the grid
-    grid.add(btn);
-});
-
-$('#startOver').click(function() {
-   console.log(grid);
-});
+let MainComponent = Vue.extend(MainContent);
+new MainComponent().$mount("container");
