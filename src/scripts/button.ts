@@ -1,5 +1,6 @@
 import Player from './player';
 import Grid from './grid';
+import {Main} from "./main";
 
 export default class Button {
     grid: Grid;
@@ -16,27 +17,33 @@ export default class Button {
         $(this.btn).click(() => this.occupyBy(p));
     }
 
-    occupyBy(player: Player) {
+    occupyBy(player: Player): void {
         // Set this button to be occupied by a specific player
         this.occupiedBy = player;
         $(this.btn).addClass('occupiedBy' + this.occupiedBy.character);
         $(this.btn).prop('disabled', true);
         $(this.btn).text(player.character);
 
+        console.log('Player: ' + player.name + ' has pressed button: ' + this.btn.id + '.');
+
         // Gather the state of the board
         this.grid.gatherState();
-        console.log('Player: ' + player.name + ' has pressed button: ' + this.btn.id + '.');
+
+        // Send the hit event to the grid:
+        if (player == Main.humanPlayer) {
+            this.grid.aiMove();
+        }
     }
 
-    getState() : number {
+    getState(): any {
         // Get the id of this button by who it is occupied
         switch($(this.btn).text()) {
             case 'X':
-                return 1;
+                return 'X';
             case 'O':
-                return 2;
+                return 'O';
             default:
-                return 0;
+                return parseInt(this.btn.id);
         }
     }
 }

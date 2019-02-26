@@ -37,3 +37,7 @@
         props: ['name', 'main-content']
     });
 </script>
+
+<style lang="scss">
+    @import "../styles/style.scss";
+</style>
