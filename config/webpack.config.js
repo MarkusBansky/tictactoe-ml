@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 /**
  * `..` Since this config file is in the config folder so we need
  * to resolve path in the top level folder.
@@ -18,17 +20,15 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-                        // the "scss" and "sass" values for the lang attribute to the right configs here.
-                        // other preprocessors should work out of the box, no loader config like this necessary.
-                        'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-                    }
-                    // other vue-loader options go here
-                }
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.tsx?$/,
@@ -53,6 +53,8 @@ module.exports = {
         watchContentBase: true,
     },
     plugins: [
+        // make sure to include the plugin!
+        new VueLoaderPlugin(),
         new webpack.NamedModulesPlugin(),
         // Exchanges, adds, or removes modules while an application is running, without a full reload.
         new webpack.HotModuleReplacementPlugin(),
