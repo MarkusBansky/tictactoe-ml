@@ -21,9 +21,11 @@ export default class Grid {
 
     aiMove(): void {
         let bestMoveForAI = this.minMaxRecursion(this.latestState, Main.humanPlayer);
-        console.log(bestMoveForAI);
+        console.log('Best move for AI: ', bestMoveForAI);
 
-        this.buttons[bestMoveForAI.index].occupyBy(Main.aiPlayer);
+        if (bestMoveForAI.index != null) {
+            this.buttons[bestMoveForAI.index].occupyBy(Main.aiPlayer);
+        }
     }
 
     minMaxRecursion(state: State, player: Player): any {
@@ -31,10 +33,12 @@ export default class Grid {
         let availableSpots = state.getEmptyIndices();
 
         // Check winning conditions
-        if (state.isWinningStateFor(Main.humanPlayer)) {
+        if (player == Main.aiPlayer && state.isWinningStateFor(Main.humanPlayer)
+            || player == Main.humanPlayer && state.isWinningStateFor(Main.aiPlayer)) {
             return {score:-10};
         }
-        else if (state.isWinningStateFor(Main.aiPlayer)) {
+        else if (player == Main.aiPlayer && state.isWinningStateFor(Main.aiPlayer)
+            || player == Main.humanPlayer && state.isWinningStateFor(Main.humanPlayer)) {
             return {score:10};
         }
         else if (availableSpots.length == 0) {
@@ -93,7 +97,7 @@ export default class Grid {
             }
         }
 
-        // console.log(moves);
+        console.log('All moves: ', moves);
 
         // return the chosen move (object) from the moves array
         return moves[bestMove];

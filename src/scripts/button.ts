@@ -4,17 +4,15 @@ import {Main} from "./main";
 
 export default class Button {
     grid: Grid;
-
     btn: Element;
-    // @ts-ignore
-    occupiedBy: Player;
+    occupiedBy?: Player;
 
-    constructor(grid: Grid, btn: HTMLElement | Element, p: Player) {
+    constructor(grid: Grid, btn: HTMLElement | Element, onClickPlayer: Player) {
         this.btn = btn;
         this.grid = grid;
 
         // Register a on click event
-        $(this.btn).click(() => this.occupyBy(p));
+        $(this.btn).on("click",() => this.occupyBy(onClickPlayer));
     }
 
     occupyBy(player: Player): void {

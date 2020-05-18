@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 $container-width: 300px;
 $game-padding: 15px;
 
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
   font-size: 18px;
+  font-weight: 700;
 }
 
 p {
@@ -21,7 +22,8 @@ p {
 }
 
 .game {
-  padding: $game-padding;
+  //padding: $game-padding;
+  margin: 20px 0;
 
   table {
     width: calc(300px - 30px);
@@ -70,8 +72,8 @@ button {
 }
 
 .occupiedByX {
-  background-color: #203541;
+  background-color: #1b262c;
 }
 .occupiedByO {
-  background-color: #f62a66;
+  background-color: #342ead;
 }

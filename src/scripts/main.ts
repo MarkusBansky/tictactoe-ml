@@ -9,16 +9,22 @@ class Main {
     static aiPlayer: Player = new Player('AI', 'O');
 
     ready(): void {
+        this.setButtons();
+
+        $('#startOver').on("click",() =>  {
+            location.reload();
+        });
+    }
+
+    setButtons() {
+        Main.grid = new Grid();
+
         // Do something for each button
         $('.game button').each((i, evt) =>  {
             // Create a new button object
             let btn = new Button(Main.grid, evt, Main.humanPlayer);
             // Add it to the grid
             Main.grid.add(btn);
-        });
-
-        $('#startOver').click(() =>  {
-            console.log(Main.grid);
         });
     }
 }
