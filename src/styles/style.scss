@@ -1,13 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
 
 $container-width: 300px;
 $game-padding: 15px;
 
-$game-pad-background: #eeeeee;
-$game-pad-border: #393e46;
+$primary-color: #ffd369;
+$secondary-color: #393e46;
+
+$game-pad-background: #fff;
+$game-pad-border: #534e52;
 $game-pad-color: #222831;
 $game-pad-background-x: #ffd369;
 $game-pad-background-o: #ee6f57;
+
+// ===================================
+// Setup the main buttons for the view
+$button-bg-color: #eeeeee;
+$button-fg-color: #393e46;
+$button-br-stroke: 0.065rem;
+$button-bd-rounding: 0.225rem;
+// ===================================
 
 * {
   font-family: 'Noto Sans JP', sans-serif;
@@ -28,14 +39,13 @@ p {
 }
 
 .game {
-  //padding: $game-padding;
   margin: 20px 0;
 
   table {
-    width: calc(300px - 30px);
-    height: calc(300px - 30px);
+    width: $container-width;
+    height: $container-width;
 
-    border: 2px solid $game-pad-border;
+    border: 1px solid $game-pad-border;
     border-radius: 0.25rem;
     border-spacing: 0;
 
@@ -71,16 +81,17 @@ p {
         line-height:0;
 
         color: $game-pad-color;
+        background-color: $game-pad-background;
       }
 
-      .occupiedByX {
+      .occupied-by-1 {
         font-size: 0;
 
         background: url(../assets/cross.svg);
         background-size: cover;
       }
 
-      .occupiedByO {
+      .occupied-by-2 {
         font-size: 0;
 
         background: url(../assets/circle.svg);
@@ -92,9 +103,51 @@ p {
 
 .footer {
   button {
-    padding: 8px 15px;
-    border: 1px solid $game-pad-border;
-    background-color: $game-pad-background;
-    border-radius: 5px;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    &:hover, &:focus {
+      background-color: darken($button-bg-color, 2.5%);
+    }
+
+    &:focus {
+      outline: darken($button-bg-color, 20%) solid #{$button-br-stroke * 1.5};
+    }
+
+    &.primary {
+      color: #000;
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+
+    &.secondary {
+      color: #fff;
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+    }
+
+    &.sm {
+      padding: .25rem .5rem;
+      font-size: .875rem;
+      border-radius: .2rem;
+    }
   }
 }

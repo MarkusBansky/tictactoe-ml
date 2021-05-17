@@ -52,16 +52,18 @@
       </table>
     </div>
     <div class="footer">
-      <button id="startOver">Start over</button>
+      <button id="startOver" class="sm primary">Start over</button>
+      <button id="saveModel" class="sm secondary">Save Model</button>
+      <button id="downloadModel" class="sm secondary">Download Model</button>
     </div>
     <div>
-      <p></p>
+      <h4>The winner is: <span id="winner"></span></h4>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "MainComponent",
