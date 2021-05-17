@@ -12,7 +12,16 @@
         continue until either of you win or it's a draw.
       </p>
     </div>
-    <div class="game">
+    <div class="row score">
+      <div class="col"><p>Player: <span id="score-human"></span></p></div>
+      <div class="col"><p>AI: <span id="score-ai"></span></p></div>
+      <div class="col"><p>Tie: <span id="score-tie"></span></p></div>
+    </div>
+    <div id="game-board" class="game">
+      <div class="loading">
+        <div class="loader"></div>
+        Please wait...
+      </div>
       <table>
         <tbody>
         <tr>
@@ -51,13 +60,16 @@
         </tbody>
       </table>
     </div>
+    <div>
+      <h4 id="winner"></h4>
+    </div>
     <div class="footer">
       <button id="startOver" class="sm primary">Start over</button>
       <button id="saveModel" class="sm secondary">Save Model</button>
       <button id="downloadModel" class="sm secondary">Download Model</button>
     </div>
     <div>
-      <h4>The winner is: <span id="winner"></span></h4>
+      <p id="debug"></p>
     </div>
   </div>
 </template>

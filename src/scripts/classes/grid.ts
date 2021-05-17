@@ -1,7 +1,7 @@
 import Button from "./button";
 import State from "./state";
 import Player from "@/scripts/classes/player";
-import {isWinningStateFor, logValues} from "@/scripts/helper";
+import {displayLoadingScreen, hideLoadingScreen, isWinningStateFor, logValues} from "@/scripts/helper";
 import GameMoves from "@/scripts/models/gameMoves";
 import {Main} from "@/scripts/main";
 import $ from "jquery";
@@ -39,13 +39,15 @@ export default class Grid {
       // disable all buttons
       this.buttons.forEach(btn => btn.disable());
       // announce the winner
-      $('#winner').html(player.name);
+      $('#winner').html(`The winner is: ${player.name}!`);
     }
 
     // if the player was human and this is not a win, then do an AI move
     if (player === Main.humanPlayer && !newState.isWin && this.buttons.filter(b => !b.occupiedBy).length > 0) {
+      displayLoadingScreen();
       Main.tfModel.predict(newState).then(index => {
         this.buttons[index].occupyBy(Main.aiPlayer);
+        hideLoadingScreen();
       });
     }
   }
@@ -84,6 +86,6 @@ export default class Grid {
       logValues(X, Y);
     }
 
-    return new GameMoves(x, y);
+    return new GameMoves(winner, x, y);
   }
 }

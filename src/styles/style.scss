@@ -40,6 +40,8 @@ p {
 
 .game {
   margin: 20px 0;
+  display: block;
+  position: relative;
 
   table {
     width: $container-width;
@@ -99,6 +101,36 @@ p {
       }
     }
   }
+
+  .loading {
+    display: none;
+    z-index: 100;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(34,40,49, 0.1);
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+
+    .loader {
+      margin: calc(50% - 36px) auto 2rem;
+    }
+  }
+
+  &.paused {
+    table {
+      filter: blur(5px);
+    }
+
+    .loading {
+      display: block;
+    }
+  }
 }
 
 .footer {
@@ -132,6 +164,10 @@ p {
       outline: darken($button-bg-color, 20%) solid #{$button-br-stroke * 1.5};
     }
 
+    &:disabled {
+      background-color: darken($button-bg-color, 10%);
+    }
+
     &.primary {
       color: #000;
       background-color: $primary-color;
@@ -150,4 +186,30 @@ p {
       border-radius: .2rem;
     }
   }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x)/ -2);
+  margin-left: calc(var(--bs-gutter-x)/ -2);
+
+  .col {
+    flex: 1 0 0%;
+  }
+}
+
+.loader {
+  border: 8px solid #393e46; /* Light grey */
+  border-top: 8px solid #ffd369; /* Blue */
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
