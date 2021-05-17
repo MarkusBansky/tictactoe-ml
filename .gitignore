@@ -1,3 +1,7 @@
+.DS_Store
+node_modules
+/dist
+
 # Logs
 logs
 *.log
@@ -60,5 +64,11 @@ typings/
 # next.js build output
 .next
 
+# Editor directories and files
 .idea
-.DS_Store
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

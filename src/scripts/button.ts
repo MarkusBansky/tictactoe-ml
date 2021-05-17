@@ -1,6 +1,11 @@
 import Player from './player';
 import Grid from './grid';
 import {Main} from "./main";
+import $ from "jquery";
+
+function getId(btn: Element): string {
+    return `#${btn.id}`;
+}
 
 export default class Button {
     grid: Grid;
@@ -12,15 +17,18 @@ export default class Button {
         this.grid = grid;
 
         // Register a on click event
-        $(this.btn).on("click",() => this.occupyBy(onClickPlayer));
+        $(getId(this.btn)).on("click",() => {
+            console.log(`Pressed button ${this.btn.id}`);
+            this.occupyBy(onClickPlayer);
+        });
     }
 
     occupyBy(player: Player): void {
         // Set this button to be occupied by a specific player
         this.occupiedBy = player;
-        $(this.btn).addClass('occupiedBy' + this.occupiedBy.character);
-        $(this.btn).prop('disabled', true);
-        $(this.btn).text(player.character);
+        $(getId(this.btn)).addClass('occupiedBy' + this.occupiedBy.character);
+        $(getId(this.btn)).prop('disabled', true);
+        $(getId(this.btn)).text(player.character);
 
         console.log('Player: ' + player.name + ' has pressed button: ' + this.btn.id + '.');
 

@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
 
 $container-width: 300px;
 $game-padding: 15px;
 
+$game-pad-background: #eeeeee;
+$game-pad-border: #393e46;
+$game-pad-color: #222831;
+$game-pad-background-x: #ffd369;
+$game-pad-background-o: #ee6f57;
+
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 h1 {
@@ -29,25 +35,31 @@ p {
     width: calc(300px - 30px);
     height: calc(300px - 30px);
 
-    border: 2px solid;
-    border-spacing: 1px !important;
+    border: 2px solid $game-pad-border;
+    border-radius: 0.25rem;
+    border-spacing: 0;
 
-    background: #000;
+    background: $game-pad-background;
     table-layout: fixed;
 
     tr {
       table-layout: fixed;
 
       td {
-        //border: 1px solid;
+        position: relative;
+
+        border: 1px solid $game-pad-border;
         vertical-align: top;
         padding: 0.5px 1px;
         margin: 0;
       }
 
       button {
-        width: 100%;
-        height: 100%;
+        display: block;
+        position: absolute;
+
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
 
         border: none;
         border-radius: 0;
@@ -58,22 +70,31 @@ p {
         overflow: hidden;
         line-height:0;
 
-        color: #fff;
+        color: $game-pad-color;
+      }
+
+      .occupiedByX {
+        font-size: 0;
+
+        background: url(../assets/cross.svg);
+        background-size: cover;
+      }
+
+      .occupiedByO {
+        font-size: 0;
+
+        background: url(../assets/circle.svg);
+        background-size: cover;
       }
     }
   }
 }
 
-button {
-  padding: 8px 15px;
-  border: 1px solid #dee1ec;
-  background-color: #f3f8ff;
-  border-radius: 2.5px;
-}
-
-.occupiedByX {
-  background-color: #1b262c;
-}
-.occupiedByO {
-  background-color: #342ead;
+.footer {
+  button {
+    padding: 8px 15px;
+    border: 1px solid $game-pad-border;
+    background-color: $game-pad-background;
+    border-radius: 5px;
+  }
 }
