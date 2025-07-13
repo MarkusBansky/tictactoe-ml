@@ -17,28 +17,39 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^4.2.0",
-    "core-js": "^3.29.0",
-    "jquery": "^3.6.3",
-    "vue": "^3.2.47"
+    "@tensorflow/tfjs": "^4.22.0",
+    "core-js": "^3.44.0",
+    "jquery": "^3.7.1",
+    "vue": "^3.5.17"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.16",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
+    "@types/jquery": "^3.5.31",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-eslint": "~5.0.8",
     "@vue/cli-plugin-typescript": "~5.0.8",
     "@vue/cli-service": "~5.0.8",
-    "@vue/compiler-sfc": "^3.2.47",
-    "@vue/eslint-config-prettier": "^7.1.0",
-    "@vue/eslint-config-typescript": "^11.0.2",
-    "eslint": "^8.35.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.9.0",
-    "prettier": "^2.8.4",
-    "sass": "^1.58.3",
-    "sass-loader": "^13.2.0",
-    "typescript": "~4.9.5"
+    "@vue/compiler-sfc": "^3.5.17",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-vue": "^9.33.0",
+    "prettier": "^3.6.2",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "typescript": "~5.5.4",
+    "vue-eslint-parser": "^10.2.0"
+  },
+  "resolutions": {
+    "postcss": "^8.4.31",
+    "cross-spawn": "^7.0.6",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "overrides": {
+    "postcss": "^8.4.31",
+    "cross-spawn": "^7.0.6",
+    "webpack-dev-server": "^5.2.1"
   }
 }

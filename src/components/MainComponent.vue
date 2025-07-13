@@ -13,63 +13,87 @@
       </p>
     </div>
     <div class="row score">
-      <div class="col"><p>Player: <span id="score-human"></span></p></div>
-      <div class="col"><p>AI: <span id="score-ai"></span></p></div>
-      <div class="col"><p>Tie: <span id="score-tie"></span></p></div>
+      <div class="col">
+        <p>Player: <span id="score-human" /></p>
+      </div>
+      <div class="col">
+        <p>AI: <span id="score-ai" /></p>
+      </div>
+      <div class="col">
+        <p>Tie: <span id="score-tie" /></p>
+      </div>
     </div>
-    <div id="game-board" class="game">
+    <div
+      id="game-board"
+      class="game"
+    >
       <div class="loading">
-        <div class="loader"></div>
+        <div class="loader" />
         Please wait...
       </div>
       <table>
         <tbody>
-        <tr>
-          <td>
-            <button id="button-0"></button>
-          </td>
-          <td>
-            <button id="button-1"></button>
-          </td>
-          <td>
-            <button id="button-2"></button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button id="button-3"></button>
-          </td>
-          <td>
-            <button id="button-4"></button>
-          </td>
-          <td>
-            <button id="button-5"></button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button id="button-6"></button>
-          </td>
-          <td>
-            <button id="button-7"></button>
-          </td>
-          <td>
-            <button id="button-8"></button>
-          </td>
-        </tr>
+          <tr>
+            <td>
+              <button id="button-0" />
+            </td>
+            <td>
+              <button id="button-1" />
+            </td>
+            <td>
+              <button id="button-2" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button id="button-3" />
+            </td>
+            <td>
+              <button id="button-4" />
+            </td>
+            <td>
+              <button id="button-5" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button id="button-6" />
+            </td>
+            <td>
+              <button id="button-7" />
+            </td>
+            <td>
+              <button id="button-8" />
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
     <div>
-      <h4 id="winner"></h4>
+      <h4 id="winner" />
     </div>
     <div class="footer">
-      <button id="startOver" class="sm primary">Start over</button>
-      <button id="saveModel" class="sm secondary">Save Model</button>
-      <button id="downloadModel" class="sm secondary">Download Model</button>
+      <button
+        id="startOver"
+        class="sm primary"
+      >
+        Start over
+      </button>
+      <button
+        id="saveModel"
+        class="sm secondary"
+      >
+        Save Model
+      </button>
+      <button
+        id="downloadModel"
+        class="sm secondary"
+      >
+        Download Model
+      </button>
     </div>
     <div>
-      <p id="debug"></p>
+      <p id="debug" />
     </div>
   </div>
 </template>
@@ -83,5 +107,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import "../styles/style.scss";
+@use "../styles/style.scss";
 </style>
