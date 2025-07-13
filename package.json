@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.31",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-eslint": "~5.0.8",
     "@vue/cli-plugin-typescript": "~5.0.8",
@@ -37,12 +37,17 @@
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-vue": "^9.33.0",
     "prettier": "^3.6.2",
-    "sass": "^1.83.1",
+    "sass": "^1.89.2",
     "sass-loader": "^16.0.5",
     "typescript": "~5.5.4",
     "vue-eslint-parser": "^10.2.0"
   },
   "resolutions": {
+    "postcss": "^8.4.31",
+    "cross-spawn": "^7.0.6",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "overrides": {
     "postcss": "^8.4.31",
     "cross-spawn": "^7.0.6",
     "webpack-dev-server": "^5.2.1"
