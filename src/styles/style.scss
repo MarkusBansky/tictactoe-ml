@@ -1,3 +1,4 @@
+@use "sass:color";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
 
 $container-width: 300px;
@@ -157,15 +158,15 @@ p {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
     &:hover, &:focus {
-      background-color: darken($button-bg-color, 2.5%);
+      background-color: color.adjust($button-bg-color, $lightness: -2.5%);
     }
 
     &:focus {
-      outline: darken($button-bg-color, 20%) solid #{$button-br-stroke * 1.5};
+      outline: color.adjust($button-bg-color, $lightness: -20%) solid #{$button-br-stroke * 1.5};
     }
 
     &:disabled {
-      background-color: darken($button-bg-color, 10%);
+      background-color: color.adjust($button-bg-color, $lightness: -10%);
     }
 
     &.primary {

@@ -107,5 +107,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import "../styles/style.scss";
+@use "../styles/style.scss";
 </style>
