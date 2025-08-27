@@ -214,3 +214,149 @@ p {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+// Training Debug Interface Styles
+.training-info {
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid $primary-color;
+  border-radius: 8px;
+  background: lighten($primary-color, 45%);
+  font-family: 'Noto Sans JP', sans-serif;
+
+  h5 {
+    margin: 0 0 10px 0;
+    color: $secondary-color;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .training-params {
+    margin-bottom: 15px;
+    
+    p {
+      margin: 0 0 5px 0;
+      font-weight: 600;
+      color: $secondary-color;
+    }
+    
+    ul {
+      margin: 5px 0 0 20px;
+      padding: 0;
+      
+      li {
+        font-size: 12px;
+        margin-bottom: 3px;
+        color: darken($secondary-color, 10%);
+      }
+    }
+  }
+
+  .progress-container {
+    margin: 15px 0;
+    
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 5px;
+      
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, $primary-color 0%, darken($primary-color, 15%) 100%);
+        transition: width 0.3s ease;
+        border-radius: 10px;
+      }
+    }
+    
+    .progress-text {
+      text-align: center;
+      font-weight: 600;
+      color: $secondary-color;
+      font-size: 14px;
+    }
+  }
+
+  .training-metrics {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    
+    .metric {
+      text-align: center;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: $secondary-color;
+      min-width: 80px;
+    }
+  }
+
+  .epoch-info {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: $secondary-color;
+    margin: 10px 0;
+  }
+
+  .final-metrics {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    
+    .metric {
+      text-align: center;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      font-size: 13px;
+      color: $secondary-color;
+      min-width: 100px;
+      
+      strong {
+        display: block;
+        font-size: 16px;
+        color: darken($secondary-color, 15%);
+      }
+    }
+  }
+
+  .training-summary {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    
+    p {
+      margin: 0 0 5px 0;
+      font-size: 13px;
+      color: $secondary-color;
+    }
+    
+    small {
+      font-size: 11px;
+      color: darken($secondary-color, 20%);
+      font-style: italic;
+    }
+  }
+
+  .educational-note {
+    margin-top: 15px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    border-left: 3px solid $primary-color;
+    
+    small {
+      font-size: 11px;
+      color: darken($secondary-color, 10%);
+      line-height: 1.4;
+      display: block;
+    }
+  }
+}
