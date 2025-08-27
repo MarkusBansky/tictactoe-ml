@@ -39,6 +39,16 @@ $ yarn serve
 
 And the game should be available on your machine via the URL provided in the command line after running the serve action.
 
+### Building for Production
+
+To build the project for production deployment:
+
+```bash
+$ yarn build
+```
+
+This will create a `dist` directory with the built application ready for deployment. The build is automatically configured for GitHub Pages deployment.
+
 ## Run from Binaries
 
 There also is an option to run the game from the compiled binaries. I have compiled it for Mac and Windows, both tested.
@@ -53,6 +63,12 @@ The game cam save and load the model in the browser memory. It loads it automati
 
 When user wins the game, this game is saved into the state, and then the model is being trained on that game. So after each time the 
 player wins the model is being retrained to learn from the errors.
+
+## Live Demo
+
+The game is automatically deployed to GitHub Pages and available at: [https://markusbansky.github.io/tictactoe-ml/](https://markusbansky.github.io/tictactoe-ml/)
+
+The deployment is automated through GitHub Actions and triggers on every push to the master branch.
 
 ## License
 
